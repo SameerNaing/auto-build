@@ -55,6 +55,7 @@ $ python cli.py
 
 ## Screenshots
 
+![log](images/log.png)
 ![build-started-msg](images/build-started-msg.png)
 ![build-summary-msg](images/build-summary-msg.png)
 ![running](images/running.png)
