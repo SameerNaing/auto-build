@@ -8,7 +8,7 @@ Autobuild is a CI/CD automation for Flymya Mobile App (Android/IOS).
 
 ## About
 
-When we want to generate archive or apk, we have to open the xcode for ios and android studio for apk, and build it manually everytime. The company give the frontend developers a seperate machine to do the building.
+In Flymya, when we want to generate archive or apk, we have to open the xcode for ios and android studio for apk, and build it manually everytime. The company give the frontend developers a seperate machine to do the building.
 
 Autobuild is programmed to build archive and apk automatically whenever there is a new code pushed to the tracked branch just like jenkins.
 
