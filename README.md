@@ -8,17 +8,17 @@ Autobuild is a CI/CD automation for Flymya Mobile App (Android/IOS).
 
 ## About
 
-In Flymya, when we want to generate archive or apk, we have to open the xcode for ios and android studio for apk, and build it manually everytime. The company give the frontend developers a seperate machine to do the building.
+In Flymya, the process of generating archives or APKs involves utilizing Xcode for iOS and Android Studio for APKs. This manual procedure necessitates the opening of these platforms each time. To facilitate this, frontend developers are provided with a dedicated machine for conducting these builds.
 
-Autobuild is programmed to build archive and apk automatically whenever there is a new code pushed to the tracked branch just like jenkins.
+The implementation of Autobuild has been designed to streamline this process. Similar to Jenkins, Autobuild is configured to automatically generate archives and APKs whenever new code is pushed to a monitored branch. Upon detecting new code, the Autobuild program retrieves the latest commit, performs the installation of node packages, and adjusts the contents of the .env file according to the specific app variant.
 
-When a new code is pushed to the tracked branch, the autobuild program will pull the latest commit and install node packages, replace and .env file contents accroding to the app varient. It will send a google chat message containing all the build information to inform the developer that the build procecess is started for his/her commit. After the build is done, it will send another google chat message about the build summary.
+To keep developers informed, the Autobuild program initiates communication. It sends a notification via Google Chat containing comprehensive build information to indicate the commencement of the build process for the respective commit. Upon the successful completion of the build, another Google Chat message is dispatched, presenting a concise overview of the build outcome.
 
-When a build process is done, it will upload the ios archive file to the testflight and android apk to the google drive and send the drive apk share url in build summary message so that the apk can be shared to the POs for testing.
+Upon completion, the build artifacts are managed accordingly. The iOS archive file is uploaded to TestFlight, while the Android APK is transferred to Google Drive. Inclusion of the Google Drive APK sharing URL in the build summary message facilitates easy distribution to Product Owners for testing purposes.
 
-It will also create a Log file for the build. If a build process fail, the developers will know exactly what went wrong by looking at the logs.
+Furthermore, Autobuild generates a detailed log file for each build, ensuring transparency in the event of a build failure. Developers gain insights into the specific reasons behind any failed build by referring to these logs.
 
-Unlike jenkins it can only build one process at a time. If a new code is pushed to the other tracked branch and one build process already running, the program will store the incomming new commit info to the queue, so it can be built after the first one is done.
+Distinguishing itself from Jenkins, Autobuild is designed to handle one build process at a time. Should a new code push occur while a build process is already underway, the program intelligently stores the incoming commit information in a queue. This enables subsequent builds to be initiated once the ongoing one concludes.
 
 A CLI is also added to interact with the program.<br/>
 ![cli-gif](images/cli.gif)
